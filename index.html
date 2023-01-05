@@ -13,10 +13,24 @@
     <title>Frontend Mentor | IP Address Tracker</title>
   </head>
   <body>
-    <main>
-      IP Address Tracker Search for any IP address or domain IP Address Location Timezone UTC
-      <!-- add offset value dynamically using the API -->
-      ISP
+    <header class="tracker__header">
+      <h1 class="tracker__title">IP Address Tracker</h1>
+      <div class="input__container">
+        <input type="text" id="" placeholder="Search for any IP address or domain" class="tracker__input" />
+        <button type="submit" class="tracker__submit"><img src="./assets/images/icon-arrow.svg" /></button>
+      </div>
+    </header>
+    <main class="map__container">
+      <div class="tracker__output-container">
+        <p class="tracker__output-title">IP Address</p>
+        <p class="tracker__output"></p>
+        <p class="tracker__output-title">Location</p>
+        <p class="tracker__output"></p>
+        <p class="tracker__output-title">Timezone</p>
+        <p class="tracker__output"></p>
+        <p class="tracker__output-title">ISP</p>
+        <p class="tracker__output"></p>
+      </div>
     </main>
     <footer>
       <div class="attribution">

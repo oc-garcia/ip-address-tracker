@@ -10,9 +10,94 @@ body {
   font-size: 18px;
 }
 
+.tracker__header {
+  background-image: url(../images/pattern-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.tracker__title {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-top: 5vh;
+  color: white;
+}
+
+.input__container {
+  margin-top: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+.tracker__input {
+  width: 45vw;
+  height: 1.9rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  color: black;
+}
+
+.tracker__input::placeholder {
+  color: black;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  padding-left: 5px;
+}
+
+.tracker__input:focus {
+  outline: none;
+}
+
+.tracker__submit {
+  height: 2.1rem;
+  width: 5vw;
+  border: none;
+  background-color: black;
+  border-radius: 0 5px 5px 0;
+  outline: 1px black;
+}
+
+.tracker__output-container {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  padding: 2rem;
+  top: 20vh;
+  left: 41vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tracker__output-title {
+  margin-top: 2rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--Dark_Gray);
+}
+
+.tracker__output-title:first-child {
+  margin: 0px;
+}
+
+.tracker__output {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
+  position: absolute;
+  bottom: 1rem;
+  left: 38vw;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
