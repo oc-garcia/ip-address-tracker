@@ -63,6 +63,10 @@ body {
   outline: 1px black;
 }
 
+.tracker__output-container-disabled {
+  display: none;
+}
+
 .tracker__output-container {
   position: absolute;
   background-color: white;
@@ -75,6 +79,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 30vw;
+  z-index: 9999;
 }
 
 .tracker__output-title {
@@ -91,6 +96,11 @@ body {
 .tracker__output {
   margin-top: 0.5rem;
   font-weight: bold;
+}
+
+#map {
+  height: 75vh;
+  width: 100vw;
 }
 
 .attribution {
