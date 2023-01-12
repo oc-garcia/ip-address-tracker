@@ -1,32 +1,46 @@
-let latitude = "";
-let longitude = "";
+let latitude = "-23.58454";
+let longitude = "-46.65469";
+
 // Shows map coordinates
-var map = L.map("map").setView([latitude, longitude], 13);
+let map = L.map("map").setView([latitude, longitude], 13);
+
+//Map pinpoint
+let marker = L.marker([latitude, longitude]).addTo(map);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
-//Map pinpoint
-var marker = L.marker([latitude, longitude]).addTo(map);
+let submitBtn = document.getElementById("submit");
+let input = document.getElementById("input");
 
+submitBtn.addEventListener("click", () => {
+  getCountry(input.value);
+});
 
 async function getCountry(ipAddress) {
-  
   const API_KEY = "at_ZqrTedooSBDBHPGDG4TqhB4bBVGiR";
   const API_ENDPOINT = "https://geo.ipify.org/api/v2/country,city";
   const url = `${API_ENDPOINT}?apiKey=${API_KEY}&ipAddress=${ipAddress}`;
   const response = await fetch(url);
   const data = await response.json();
-  let latitude = data.location.lat;
-  let longitude = data.location.lng;
+  latitude = data.location.lat;
+  longitude = data.location.lng;
+  map = L.map("map").setView([latitude, longitude], 13);
+  marker = L.marker([latitude, longitude]).addTo(map);
+
   console.log(data.location);
-  return data;
+  return coordinates;
+}
+
+function initializeMap() {}
+function updateLat(latitude) {
+  return latitude;
+}
+
+function updateLong(longitude) {
+  return longitude;
 }
 
 //getCountry("196.2.87.183");
-/*
-const country = await getCountry("8.8.8.8");
-console.log(country);
-*/
