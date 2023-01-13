@@ -1,5 +1,6 @@
-let latitude = "-23.58454";
-let longitude = "-46.65469";
+//Currahee
+let latitude = "50.00176";
+let longitude = "5.71270";
 
 // Shows map coordinates
 let map = L.map("map").setView([latitude, longitude], 13);
@@ -27,20 +28,11 @@ async function getCountry(ipAddress) {
   const data = await response.json();
   latitude = data.location.lat;
   longitude = data.location.lng;
-  map = L.map("map").setView([latitude, longitude], 13);
+  map.setView([latitude, longitude], 13);
   marker = L.marker([latitude, longitude]).addTo(map);
 
   console.log(data.location);
   return coordinates;
-}
-
-function initializeMap() {}
-function updateLat(latitude) {
-  return latitude;
-}
-
-function updateLong(longitude) {
-  return longitude;
 }
 
 //getCountry("196.2.87.183");
